@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const bot = Discord.Client();
+const bot = new Discord.Client();
 
 bot.on('ready', () => {
     console.log('Bot is ready !');
@@ -7,7 +7,7 @@ bot.on('ready', () => {
 
 bot.on('message', (message) => {
     if (message.content.startsWith("-")) {
-        
+
     }
 });
 
