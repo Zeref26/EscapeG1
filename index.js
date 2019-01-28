@@ -10,8 +10,17 @@ bot.on("guildMemberAdd", member => {
 });
 
 bot.on('message', (message) => {
-    if (message.content.startsWith("-")) {
-
+    let serv = bot.guilds.find('name',"Escape Game");
+    let member = serv.members.find('id',message.author.id);
+    if (message.content.startsWith("-ready")) {
+        if (member.roles.exists('name',"Nouveau")) {
+            member.send("Vouc êtes devenu un membre.");
+            member.addRole(serv.roles.find('name',"Membre"));
+            member.removeRole(serv.roles.find('name',"Nouveau"));
+            message.delete();
+        } else {
+            message.delete();
+        }
     }
 });
 
