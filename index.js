@@ -25,7 +25,7 @@ bot.on('message', (message) => {
     if (message.content == "-partenariat") {
         message.delete();
         member.send({embed : {
-            color : "#0B1DA8",
+            hexColor : "#0B1DA8",
             author: {
                 name: bot.user.username,
                 icon_url: bot.user.avatarURL
