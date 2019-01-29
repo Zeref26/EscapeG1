@@ -30,9 +30,6 @@ bot.on('message', (message) => {
                 name: bot.user.username,
                 icon_url: bot.user.avatarURL
               },
-              title: "This is an embed",
-              url: "http://google.com",
-              description: "This is a test embed to showcase what they look like and what they can do.",
               fields: [{
                 name: "Comment faire un partenariat ?",
                 value: "C'est très simple, il suffit d'envoyer votre fiche à un administrateur en ayant rempli les champs demandés.\nA la suite de celà, votre fiche sera publiée, ou non si il y a des problème avec celle-ci."
