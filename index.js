@@ -27,8 +27,8 @@ bot.on('message', (message) => {
         member.send({embed : {
             color : "#0B1DA8",
             author: {
-                name: client.user.username,
-                icon_url: client.user.avatarURL
+                name: bot.user.username,
+                icon_url: bot.user.avatarURL
               },
               title: "This is an embed",
               url: "http://google.com",
