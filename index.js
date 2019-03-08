@@ -27,14 +27,18 @@ bot.on('message', (message) => {
         member.send({embed : {
             hexColor : "#0B1DA8",
             author: {
-                name: bot.user.username,
+                name: "Partenariat",
                 icon_url: bot.user.avatarURL
-              },
-              fields: [{
+            },
+            fields: [{
                 name: "Comment faire un partenariat ?",
                 value: "C'est très simple, il suffit d'envoyer votre fiche à un administrateur en ayant rempli les champs demandés.\nA la suite de celà, votre fiche sera publiée, ou non si il y a des problème avec celle-ci."
-              }]
+          }]
         }});
+    }
+    if (message.content == "-vote") {
+        message.delete();
+        message.channel.send("Vos notes pour ce serveur ?").then(mes => mes.react(':zero:'));
     }
 });
 
