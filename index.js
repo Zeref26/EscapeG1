@@ -38,7 +38,7 @@ bot.on('message', (message) => {
     }
     if (message.content == "-vote") {
         message.delete();
-        message.channel.send("Vos notes pour ce serveur ?").then(mes => mes.react('553697369254789140'));
+        message.channel.send("Vos notes pour ce serveur ?").then(mes => mes.react(message.guild.emojis.get('553697369254789140')));
     }
 });
 
