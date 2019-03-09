@@ -40,7 +40,7 @@ bot.on('message', (message) => {
         if (admin.roles.exists('name','Administrateur') || admin.roles.exists('name','Modérateur')) {
             let mem = message.mentions.members.first();
             let r = args.slice(1).join(" ");
-            chan.send(mem.nickname+" a été exclu par "+admin.nickname+" pour la raison : "+r);
+            chan.send(mem.displayName+" a été exclu par "+admin.displayName+" pour la raison : "+r);
             mem.send("Vous avez été exclu pour : "+r);
             mem.kick();
         }
