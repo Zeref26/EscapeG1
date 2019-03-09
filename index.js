@@ -55,7 +55,7 @@ bot.on('message', (message) => {
             let r = args.slice(1).join(" ");
             chan.send(mem.nickname+" a été banni par "+admin.nickname+" pour la raison : "+r);
             mem.send("Vous avez été banni pour : "+r);
-            mem.kick();
+            mem.ban();
         }
     }
     if (message.content.startsWith("-say")) {
