@@ -16,7 +16,7 @@ bot.on('message', (message) => {
     let chan = message.guild.channels.find('name','logs');
     let member = serv.members.find('id',message.author.id);
     if (!(message.author.id == "536307206958612491" || message.channel.name == "historique-message")) {
-        message.guild.channels.find('name',"historique").send(message.createdAt+" "+message.channel+" "+message.author.username+" : "+message);
+        message.guild.channels.find('name',"historique-message").send(message.createdAt+" "+message.channel+" "+message.author.username+" : "+message);
     }
     if (message.content == "-partenariat") {
         message.delete();
