@@ -6,22 +6,14 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", member => {
-    member.addRole(bot.guilds.find('name',"Escape Hub").roles.find('name',"Nouveau"));    
+    member.addRole(bot.guilds.find('name',"Escape Hub").roles.find('name',"----------{Membre}----------"));
+    member.addRole(bot.guilds.find('name',"Escape Hub").roles.find('name',"----------{Jeux}----------"));
+    member.addRole(bot.guilds.find('name',"Escape Hub").roles.find('name',"----------{Tags}----------"));
 });
 
 bot.on('message', (message) => {
     let serv = bot.guilds.find('name',"Escape Hub");
     let member = serv.members.find('id',message.author.id);
-    if (message.content == "-ready") {
-        if (member.roles.exists('name',"Nouveau")) {
-            member.send("Vouc êtes devenu un membre.");
-            member.addRole(serv.roles.find('name',"Membre"));
-            member.removeRole(serv.roles.find('name',"Nouveau"));
-            message.delete();
-        } else {
-            message.delete();
-        }
-    }
     if (message.content == "-partenariat") {
         message.delete();
         member.send({embed : {
@@ -38,7 +30,7 @@ bot.on('message', (message) => {
     }
     if (message.content == "-vote") {
         message.delete();
-        message.channel.send("Vos notes pour ce serveur ?").then(mes => mes.react(message.guild.emojis.find('id','553697369254789140')));
+        message.channel.send("Vos notes pour ce serveur ?").then(mes => mes.react(":zero:"));
     }
 });
 
