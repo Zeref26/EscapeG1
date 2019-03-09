@@ -39,9 +39,8 @@ bot.on('message', (message) => {
         const args = message.content.slice(1).trim().split(/ +/g);
         if (admin.roles.exists('name','Administrateur') || admin.roles.exists('name','Modérateur')) {
             let mem = message.mentions.members.first();
-            let r = args.slice(1).join(" ");
+            let r = args.slice(2).join(" ");
             chan.send(mem.displayName+" a été exclu par "+admin.displayName+" pour la raison : "+r);
-            mem.send("Vous avez été exclu pour : "+r);
             mem.kick();
         }
     }
@@ -52,9 +51,8 @@ bot.on('message', (message) => {
         const args = message.content.slice(1).trim().split(/ +/g);
         if (admin.roles.exists('name','Administrateur')) {
             let mem = message.mentions.members.first();
-            let r = args.slice(1).join(" ");
+            let r = args.slice(2).join(" ");
             chan.send(mem.nickname+" a été banni par "+admin.nickname+" pour la raison : "+r);
-            mem.send("Vous avez été banni pour : "+r);
             mem.ban();
         }
     }
