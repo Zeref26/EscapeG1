@@ -9,6 +9,7 @@ bot.on('message', message => {
     const args = message.content.slice(1).trim().split(/ +/g);
     const aut = message.guild.members.find('id',message.author.id);
     if (message.content.startsWith("-start")) {
+        message.delete();
         if (aut.roles.exists('hexColor',"#9033ca")) {
             message.guild.createChannel(aut.roles.find('hexColor',"#9033ca").name,'category').then(channel => {
                 channel.overwritePermissions(aut.roles.find('hexColor',"#9033ca"),{
