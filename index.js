@@ -9,15 +9,17 @@ bot.on('message', message => {
     const args = message.content.slice(1).trim().split(/ +/g);
     const aut = message.guild.members.find('id',message.author.id);
     if (message.content.startsWith("-start")) {
-        message.guild.createChannel(aut.roles.find('hexColor',"#9033ca"),'category',[{
-            deny: ['SEND_MESSAGES','READ_MESSAGES','VIEW_CHANNEL'],
-            allow: []
-        }]).then(channel => {
+        message.guild.createChannel(aut.roles.find('hexColor',"#9033ca"),'category').then(channel => {
             channel.overwritePermissions(aut.roles.find('hexColor',"#9033ca"),{
                 SEND_MESSAGES: true,
                 READ_MESSAGES: true,
                 VIEW_CHANNEL: true
-            })
+            });
+            channel.overwritePermissions(message.guild.roles.find('name',"@everyone"),{
+                SEND_MESSAGES: false,
+                READ_MESSAGES: false,
+                VIEW_CHANNEL: false
+            });
         });
     }
 });
