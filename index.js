@@ -20,6 +20,19 @@ bot.on('message', message => {
                 READ_MESSAGES: false,
                 VIEW_CHANNEL: false
             });
+            message.guild.createChannel("salle de test",'text').then(chan => {
+                chan.setParent(channel);
+                chan.overwritePermissions(aut.roles.find('hexColor',"#9033ca"),{
+                    SEND_MESSAGES: true,
+                    READ_MESSAGES: true,
+                    VIEW_CHANNEL: true
+                });
+                chan.overwritePermissions(message.guild.roles.find('name',"@everyone"),{
+                    SEND_MESSAGES: false,
+                    READ_MESSAGES: false,
+                    VIEW_CHANNEL: false
+                });
+            });
         });
     }
 });
