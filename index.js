@@ -10,7 +10,7 @@ bot.on('message', message => {
     const aut = message.guild.members.find('id',message.author.id);
     if (message.content.startsWith("-start")) {
         message.guild.createChannel(aut.roles.find('hexColor',"#9033ca"),'category',[{
-            id: guild.id,
+            id: message.guild.id,
             deny: ['SEND_MESSAGES','READ_MESSAGES','VIEW_CHANNEL'],
             allow: []
         }]).then(channel => {
