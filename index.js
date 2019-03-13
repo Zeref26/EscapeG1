@@ -35,6 +35,9 @@ bot.on('message', message => {
                         VIEW_CHANNEL: false
                     });
                 });
+                setTimeout(function() {
+                    channel.delete();
+                }, 1000*60);
             });
         } else {
             message.channel.send("Vous n'êtes dans aucun groupe");
