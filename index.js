@@ -34,10 +34,11 @@ bot.on('message', message => {
                         READ_MESSAGES: false,
                         VIEW_CHANNEL: false
                     });
+                    setTimeout(function() {
+                        channel.delete();
+                        chan.delete();
+                    }, 1000*60);
                 });
-                setTimeout(function() {
-                    channel.delete();
-                }, 1000*60);
             });
         } else {
             message.channel.send("Vous n'êtes dans aucun groupe");
